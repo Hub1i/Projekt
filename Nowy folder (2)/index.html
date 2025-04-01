@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czas Na Dobre Cięcie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsivity.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <button class="theme-switcher" id="themeSwitcher">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+    </button>
+
+    <nav>
+        <div class="hamburger-menu">
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button></div>
+        <ul>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#opinie">Opinie</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <img src="obraz_2025-03-25_171258499.png" alt="Logo Salonu" class="logo">
+    </header>
+    
+    <section id="galeria">
+        <h2>Galeria</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="1512131825624.webp" alt="Galeria Fryzjerska">
+                    </div>
+                    <div class="slide">
+                        <img src="1528226971657.webp" alt="Galeria Fryzjerska">
+                    </div>
+                    <div class="slide">
+                        <img src="1513122028142.webp" alt="Galeria Fryzjerska">
+                    </div>
+                    <div class="slide">
+                        <img src="1513258871475.webp" alt="Galeria Fryzjerska">
+                    </div>
+                    <div class="slide">
+                        <img src="1521629378601.webp" alt="Galeria Fryzjerska">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button id="prev">Poprzednie</button>
+            <button id="next">Następne</button>
+        </div>
+        <a href="galeria.html" class="gallery-btn">Zobacz więcej</a>
+    </section>
+    
+    <section id="oferta">
+        <h2>Oferta</h2>
+        <table>
+            <tr><th>Usługa</th><th>Cena</th></tr>
+            <tr><td>Strzyżenie damskie</td><td>50 zł</td></tr>
+            <tr><td>Strzyżenie męskie</td><td>40 zł</td></tr>
+            <tr><td>Koloryzacja</td><td>120 zł</td></tr>
+            <tr><td>Modelowanie</td><td>70 zł</td></tr>
+        </table>
+    </section>
+    
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:662666104" class="phone">662 666 104</a></p>
+        <form>
+            <label for="name">Imię:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" required></textarea>
+            
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+    
+    <section class="map-container">
+        <h2>Lokalizacja</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.5288051090242!2d19.389271076347974!3d51.8695591841825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bb686ca3c5d07%3A0xd8bdde4c62918cb0!2sJesienna%206%2C%2095-100%20Zgierz!5e0!3m2!1spl!2spl!4v1742918577967!5m2!1spl!2spl" allowfullscreen="" loading="lazy"></iframe>
+        <p>Adres: Jesienna 6, 95-100 Zgierz</p>
+    </section>
+    
+    <section class="opening-hours">
+        <h3>Godziny otwarcia</h3>
+        <p>Poniedziałek - Piątek: 10:00 - 18:00</p>
+        <p>Sobota: 09:00 - 13:00</p>
+        <p>Niedziela: Zamknięte</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Czas Na Dobre Cięcie. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Kolory trybu ciemnego */
+    --gold-light: #FFD700;
+    --gold-dark: #D4AF37;
+    --black: #000000;
+    --black-light: #1A1A1A;
+    --black-lighter: #2A2A2A;
+    --white: #FFFFFF;
+    --gray: #333333;
+}
+
+[data-theme="light"] {
+    /* Kolory trybu jasnego */
+    --gold-light: #D4AF37;
+    --gold-dark: #B8860B;
+    --black: #FFFFFF;
+    --black-light: #F5F5F5;
+    --black-lighter: #E5E5E5;
+    --white: #000000;
+    --gray: #DDDDDD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Przycisk przełączania trybu */
+.theme-switcher {
+    position: fixed;
+    top: 3px;
+    right: 20px;
+    z-index: 1001;
+    background-color: var(--black-light);
+    border: 2px solid var(--gold-light);
+    color: var(--white);
+    border-radius: 50px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switcher i {
+    font-size: 1.2rem;
+}
+
+/* Nawigacja */
+nav {
+    background-color: var(--black-light);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--gold-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold-light);
+}
+
+/* Hamburger menu - DOMYŚLNIE UKRYTY */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background-color: var(--black-light);
+    color: var(--gold-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.hamburger i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger:hover {
+    color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    background-color: transparent;
+}
+
+.hamburger.active {
+    color: var(--gold-dark);
+    border-color: var(--gold-dark);
+}
+
+/* Header */
+header {
+    margin-top: 80px;
+    padding: 60px 0 40px;
+    background: linear-gradient(to bottom, var(--black) 0%, var(--black-light) 100%);
+}
+
+.logo {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-in-out;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+}
+
+/* Galeria */
+#galeria {
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.slider {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid var(--gold-light);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    aspect-ratio: 16/9;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slider-nav button {
+    background-color: var(--black-light);
+    color: var(--gold-light);
+    border: 2px solid var(--gold-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.slider-nav button:hover {
+    background-color: var(--gold-light);
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.gallery-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 35px;
+    background-color: var(--gold-light);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 2px solid var(--gold-light);
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.gallery-btn:hover {
+    background-color: transparent;
+    color: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Oferta */
+#oferta {
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px;
+    background-color: var(--black-light);
+    border-radius: 10px;
+    border-top: 2px solid var(--gold-light);
+    border-bottom: 2px solid var(--gold-light);
+}
+
+#oferta h2 {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--black-lighter);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 18px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--gold-light);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+td {
+    border-bottom: 1px solid var(--gray);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--black-light);
+}
+
+/* Kontakt */
+#kontakt {
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px;
+    background-color: var(--black-light);
+    border-radius: 10px;
+}
+
+#kontakt h2 {
+    color: var(--gold-light);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+#kontakt p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+#kontakt a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+#kontakt a:hover {
+    color: var(--gold-dark);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+input, textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gold-light);
+    background-color: var(--black-lighter);
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold-dark);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+button {
+    padding: 15px;
+    background-color: var(--gold-light);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--gold-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Mapa */
+.map-container {
+    margin: 80px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.map-container h2 {
+    color: var(--gold-light);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    border: 2px solid var(--gold-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.map-container p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+}
+
+/* Godziny otwarcia */
+.opening-hours {
+    margin: 60px auto;
+    padding: 30px;
+    background-color: var(--black-light);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid var(--gold-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.opening-hours h3 {
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.opening-hours p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Stopka */
+footer {
+    margin-top: 80px;
+    background-color: var(--black-light);
+    padding: 30px 0;
+    border-top: 2px solid var(--gold-light);
+}
+
+footer p {
+    color: var(--gold-light);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goldPulse {
+    0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+h2 {
+    animation: goldPulse 3s infinite;
+}
+.hamburger-menu{
+    display: none;
+}
+
+/* Responsywność - zostanie przeniesiona do osobnego pliku responsivity.css */
