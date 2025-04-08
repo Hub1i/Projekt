@@ -15,7 +15,7 @@
 </a>
 <a href="https://www.instagram.com/twojanazwainstagrama" class="ig-icon" target="_blank" aria-label="Instagram">
     <i class="fab fa-instagram"></i>
-    <span class="ig-text">Obserwuj nas na Instagramie</span>
+    <span class="ig-text">Obserwuj na Instagramie</span>
 </a>
 
 <script src="//code.tidio.co/aokorza8k941czicrdrohe3x1jrltt5d.js" async></script>
@@ -138,6 +138,14 @@
         <p>&copy; 2025 Czas Na Dobre Cięcie. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+
+    // Nasłuchiwanie na zdarzenie, które wskazuje na zakończenie interakcji z chatbotem
+    tidioChatApi.on('message', function() {
+        location.reload(); // Odświeża stronę po każdej interakcji
+    });
+
+
+    </script>
 </body>
 </html>

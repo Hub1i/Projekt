@@ -157,6 +157,9 @@ header {
     position: relative;
     max-width: 1000px;
     margin: 40px auto;
+    padding: 20px;
+    background-color: var(--black-light);
+    border-radius: 10px;
 }
 
 .slider {
@@ -368,6 +371,17 @@ button:hover {
     margin: 80px auto;
     width: 90%;
     max-width: 1000px;
+    overflow: hidden;
+    padding: 40px;
+    background-color: var(--black-light);
+    border-radius: 10px;
+    border: 2px solid var(--gold-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 300;
 }
 
 .map-container h2 {
@@ -572,6 +586,15 @@ h2 {
     color: var(--white);
     animation: fadeIn 0.5s ease;
     position: relative;
+    overflow: hidden;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s ease;
 }
 
 .modal-content h2 {
