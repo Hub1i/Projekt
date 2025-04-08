@@ -4,8 +4,8 @@
     /* Kolory trybu ciemnego */
     --gold-light: #FFD700;
     --gold-dark: #D4AF37;
-    --black: #000000;
-    --black-light: #1A1A1A;
+    --black: #1A1A1A;
+    --black-light: #1a1a1aa2;
     --black-lighter: #2A2A2A;
     --white: #FFFFFF;
     --gray: #333333;
@@ -15,11 +15,11 @@
     /* Kolory trybu jasnego */
     --gold-light: #D4AF37;
     --gold-dark: #B8860B;
-    --black: #FFFFFF;
-    --black-light: #F5F5F5;
+    --black: #f7eeee;
+    --black-light: #dddddd67;
     --black-lighter: #E5E5E5;
     --white: #000000;
-    --gray: #DDDDDD;
+    --gray: #dddddd54;
 }
 
 * {
