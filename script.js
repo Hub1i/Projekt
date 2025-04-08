@@ -99,3 +99,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize theme
     setTheme(currentTheme);
 });
+
+// Modal for opinions
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("opinieModal");
+    const opinieLink = document.querySelector('a[href="#opinie"]');
+    const closeBtn = document.querySelector(".close");
+
+    opinieLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+});
